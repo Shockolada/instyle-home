@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header.html')
+
+  <!-- PAGE CONTENT
+  ================================================== -->
+  <main>
+
+    @@include('./html-partials/blocks/hero.html')
+
+  </main> <!-- / PAGE CONTENT -->
+
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+  @@include('./html-partials/basic/scripts.html')
+
+  <script>
+    $(document).ready(function () {
+      var mySwiper = new Swiper('.hero-slider', {
+        loop: true
+      })
+    });
+  </script>
+
+</body>
+
+</html>

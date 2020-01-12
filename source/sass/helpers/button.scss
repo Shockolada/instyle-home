@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  background-color: $color-accent;
+
+  transition: all 0.3s linear;
+
+  cursor: pointer;
+}
+
+.button--gray {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button--gray:hover,
+.button--gray:focus {
+  background-color: #ffffff;
+  color: $color-text;
+}
+

@@ -1,0 +1,156 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$b1-name: 'b1';
+$b1-x: 0px;
+$b1-y: 0px;
+$b1-offset-x: 0px;
+$b1-offset-y: 0px;
+$b1-width: 23px;
+$b1-height: 26px;
+$b1-total-width: 108px;
+$b1-total-height: 77px;
+$b1-image: '../img/sprite.png';
+$b1: (0px, 0px, 0px, 0px, 23px, 26px, 108px, 77px, '../img/sprite.png', 'b1', );
+$b2-name: 'b2';
+$b2-x: 31px;
+$b2-y: 0px;
+$b2-offset-x: -31px;
+$b2-offset-y: 0px;
+$b2-width: 24px;
+$b2-height: 24px;
+$b2-total-width: 108px;
+$b2-total-height: 77px;
+$b2-image: '../img/sprite.png';
+$b2: (31px, 0px, -31px, 0px, 24px, 24px, 108px, 77px, '../img/sprite.png', 'b2', );
+$b3-name: 'b3';
+$b3-x: 63px;
+$b3-y: 0px;
+$b3-offset-x: -63px;
+$b3-offset-y: 0px;
+$b3-width: 23px;
+$b3-height: 23px;
+$b3-total-width: 108px;
+$b3-total-height: 77px;
+$b3-image: '../img/sprite.png';
+$b3: (63px, 0px, -63px, 0px, 23px, 23px, 108px, 77px, '../img/sprite.png', 'b3', );
+$b4-name: 'b4';
+$b4-x: 0px;
+$b4-y: 34px;
+$b4-offset-x: 0px;
+$b4-offset-y: -34px;
+$b4-width: 28px;
+$b4-height: 19px;
+$b4-total-width: 108px;
+$b4-total-height: 77px;
+$b4-image: '../img/sprite.png';
+$b4: (0px, 34px, 0px, -34px, 28px, 19px, 108px, 77px, '../img/sprite.png', 'b4', );
+$envelope-name: 'envelope';
+$envelope-x: 0px;
+$envelope-y: 61px;
+$envelope-offset-x: 0px;
+$envelope-offset-y: -61px;
+$envelope-width: 20px;
+$envelope-height: 16px;
+$envelope-total-width: 108px;
+$envelope-total-height: 77px;
+$envelope-image: '../img/sprite.png';
+$envelope: (0px, 61px, 0px, -61px, 20px, 16px, 108px, 77px, '../img/sprite.png', 'envelope', );
+$geoposition-name: 'geoposition';
+$geoposition-x: 94px;
+$geoposition-y: 0px;
+$geoposition-offset-x: -94px;
+$geoposition-offset-y: 0px;
+$geoposition-width: 14px;
+$geoposition-height: 20px;
+$geoposition-total-width: 108px;
+$geoposition-total-height: 77px;
+$geoposition-image: '../img/sprite.png';
+$geoposition: (94px, 0px, -94px, 0px, 14px, 20px, 108px, 77px, '../img/sprite.png', 'geoposition', );
+$phone-name: 'phone';
+$phone-x: 63px;
+$phone-y: 31px;
+$phone-offset-x: -63px;
+$phone-offset-y: -31px;
+$phone-width: 20px;
+$phone-height: 20px;
+$phone-total-width: 108px;
+$phone-total-height: 77px;
+$phone-image: '../img/sprite.png';
+$phone: (63px, 31px, -63px, -31px, 20px, 20px, 108px, 77px, '../img/sprite.png', 'phone', );
+$spritesheet-width: 108px;
+$spritesheet-height: 77px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($b1, $b2, $b3, $b4, $envelope, $geoposition, $phone, );
+$spritesheet: (108px, 77px, '../img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

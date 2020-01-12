@@ -1,0 +1,27 @@
+.social {
+  @include list-reset;
+  margin-right: -5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social__item {
+  margin-right: 5px;
+}
+
+.social__link {
+  outline: 1px solid #fff;
+}
+
+.social-link__icon {
+  fill: #ffffff;
+
+  transition: 0.3s color linear;
+}
+
+.social__link:hover,
+.social__link:focus {
+  .social-link__icon {
+    fill: $color-accent;
+  }
+}

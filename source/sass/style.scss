@@ -1,0 +1,31 @@
+/* BASIC PAGE NEEDS */
+@import "basic/variables.scss";
+@import "basic/fonts.scss";
+@import "basic/normalize.scss";
+@import "basic/scaffolding.scss";
+@import "basic/visually-hidden.scss";
+@import "basic/no-scroll.scss";
+
+@import "mixins/mixins.scss";
+
+/* LIBRARIES */
+@import "libs/swiper.scss";
+
+/* HELPERS */
+@import "helpers/container.scss";
+@import "helpers/button.scss";
+
+/* MODULES */
+@import "modules/burger-btn.scss";
+@import "modules/scroll-down-btn.scss";
+
+/* BLOCKS */
+@import "blocks/main/page-header.scss";
+@import "blocks/main/mobile-menu.scss";
+@import "blocks/main/main-nav.scss";
+@import "blocks/main/page-footer.scss";
+
+@import "blocks/hero.scss";
+@import "blocks/hero-slider.scss";
+@import "blocks/property-links.scss";
+@import "blocks/social.scss";
