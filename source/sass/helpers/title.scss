@@ -1,0 +1,12 @@
+.title {
+  margin: 0;
+  font-size: calcResponsiveSize(30, 40, 320, 1200);
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (min-width: $desktop_s) {
+  .title {
+    font-size: 40px;
+  }
+}

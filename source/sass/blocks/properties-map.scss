@@ -1,0 +1,69 @@
+.properties-map__list {
+  @include list-reset;
+}
+
+.properties-map__item {
+  margin-bottom: 10px;
+}
+
+.properties-map__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 40px;
+  border: 1px solid #e8e8e8;
+  font-size: 15px;
+  color: $color-text;
+  text-decoration: none;
+
+  transition: 0.3s color linear;
+}
+
+.properties-map__img-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.properties-map__img {
+  display: block;
+  flex-shrink: 0;
+  width: 100%;
+  // height: 125px;
+  // object-fit: cover;
+  // object-position: center;
+
+  transition: 0.3 transform ease;
+}
+
+.properties-map__item-info {
+  padding: 10px;
+}
+
+.properties-map__price {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.properties-map__link:hover,
+.properties-map__link:focus {
+  color: $color-accent;
+
+  .properties-map__img {
+    transform: scale(1.15);
+  }
+}
+
+@media (min-width: $tablet) {
+  .properties-map__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .properties-map__item {
+    width: calc(50% - 10px);
+  }
+
+  .properties-map__item:nth-of-type(odd) {
+    margin-right: 10px;
+  }
+}

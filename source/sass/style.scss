@@ -8,12 +8,19 @@
 
 @import "mixins/mixins.scss";
 
+//FUNCTIONS 
+@import "functions/strip-units.scss";
+@import "functions/calc-responsive-size.scss";
+
 /* LIBRARIES */
 @import "libs/swiper.scss";
 
 /* HELPERS */
 @import "helpers/container.scss";
+@import "helpers/section.scss";
 @import "helpers/button.scss";
+@import "helpers/title.scss";
+@import "helpers/section-description.scss";
 
 /* MODULES */
 @import "modules/burger-btn.scss";
@@ -29,3 +36,5 @@
 @import "blocks/hero-slider.scss";
 @import "blocks/property-links.scss";
 @import "blocks/social.scss";
+@import "blocks/properties-block.scss";
+@import "blocks/properties-map.scss";

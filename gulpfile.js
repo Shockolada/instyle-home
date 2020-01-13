@@ -132,14 +132,20 @@ gulp.task("imagesmin", function () {
           progressive: true                             // Прогрессивная загрузка
         }),
         imagemin.svgo({                                 // Оптимизация svg
-          plugins: [
-            {
-              removeViewBox: false,                      // Не удалять viewbox
-              removeScriptElement: false,
-              cleanupIDs: false,                        // Не удалять ID
-              removeDimensions: true                        // remove width/height and add viewBox if it's missing (opposite to removeViewBox, disable it first)
-            }
-        ]
+        //   plugins: [
+        //     {
+        //       removeViewBox: false,                      // Не удалять viewbox
+        //       // removeScriptElement: false,
+        //       // cleanupIDs: false,                        // Не удалять ID
+        //       // removeDimensions: true                        // remove width/height and add viewBox if it's missing (opposite to removeViewBox, disable it first)
+        //     }
+        // ]
+        plugins: [{
+          removeViewBox: false                      // Не удалять viewbox
+        },
+        {
+          cleanupIDs: false                         // Не удалять ID
+        }]
       })
     ]))
       // )

@@ -1,0 +1,13 @@
+.section-description {
+  font-size: calcResponsiveSize(22, 25, 320, 1200);
+  text-align: center;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+@media (min-width: $desktop_s) {
+  .section-description {
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+}
