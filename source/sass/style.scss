@@ -14,6 +14,7 @@
 
 /* LIBRARIES */
 @import "libs/swiper.scss";
+@import "libs/jquery.fancybox.scss";
 
 /* HELPERS */
 @import "helpers/container.scss";
@@ -21,6 +22,7 @@
 @import "helpers/button.scss";
 @import "helpers/title.scss";
 @import "helpers/section-description.scss";
+@import "helpers/gm-styles.scss";
 
 /* MODULES */
 @import "modules/burger-btn.scss";
@@ -38,3 +40,4 @@
 @import "blocks/social.scss";
 @import "blocks/properties-block.scss";
 @import "blocks/properties-map.scss";
+@import "blocks/preview-slider.scss";

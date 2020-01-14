@@ -1,0 +1,41 @@
+.gm-style .gm-style-iw-c {
+  border-radius: 0;
+}
+
+.infowindow__link {
+  display: block;
+  width: 180px;
+  margin-bottom: 5px;
+  color: $color-text;
+  text-decoration: none;
+  transition: 0.2s color ease;
+}
+
+.infowindow__img-wrap {
+  display: block;
+  margin-bottom: 5px;
+  overflow: hidden;
+  
+  img {
+    width: 180px;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+
+    transition: 0.2s transform ease;
+  }
+}
+
+.infowindow__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.infowindow__link:hover,
+.infowindow__link:focus {
+  color: $color-accent;
+
+  .infowindow__img-wrap img {
+    transform: scale(1.05);
+  }
+}

@@ -32,7 +32,7 @@
   // object-fit: cover;
   // object-position: center;
 
-  transition: 0.3 transform ease;
+  transition: 0.3s transform ease;
 }
 
 .properties-map__item-info {
@@ -49,8 +49,16 @@
   color: $color-accent;
 
   .properties-map__img {
-    transform: scale(1.15);
+    // transform: scale(1.15);
   }
+}
+
+.properties-map__map-wrap {
+  height: 400px;
+}
+
+.properties-map__map {
+  height: 100%;
 }
 
 @media (min-width: $tablet) {
@@ -65,5 +73,31 @@
 
   .properties-map__item:nth-of-type(odd) {
     margin-right: 10px;
+  }
+
+  .properties-map__map-wrap {
+    height:auto;
+  }
+}
+
+@media (min-width: $desktop_xs) {
+  .properties-map__content {
+    display: flex;
+  }
+
+  .properties-map__list {
+    width: 50%;
+    margin-bottom: -10px;
+    padding-right: 15px;
+  }
+
+  .properties-map__map-wrap {
+    width: 50%;
+    padding-left: 15px;
+  }
+
+  .properties-map__map {
+    width: 100%;
+    height: 100%;
   }
 }
