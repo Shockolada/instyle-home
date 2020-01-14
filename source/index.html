@@ -13,6 +13,13 @@
 
     @@include('./html-partials/blocks/hero.html')
 
+    <iframe class="youtube-video" width="560" height="315"
+      src="https://www.youtube.com/embed/glEiPXAYE-U?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0"
+      allowfullscreen></iframe>
+
+    <div><a href="#" class="play-video">Play Video</a></div>
+    <div><a href="#" class="stop-video">Stop Video</a></div>
+    <div><a href="#" class="pause-video">Pause Video</a></div>
     @@include('./html-partials/blocks/properties-block.html')
 
     @@include('./html-partials/blocks/properties-map.html')
@@ -28,7 +35,20 @@
       var mySwiper = new Swiper('.hero-slider', {
         loop: true
       })
+
+
+      // $('.hero-slider__video').click(function () {
+      //   console.log('+');
+      //   let iframe = $(this).closest('.hero-slider__slide').find('iframe')
+      //   let src = iframe.prop('src');
+      //   src += "&autoplay=1";
+      //   iframe.prop('src', src);
+
+      //   // $('iframe').attr('allow', 'autoplay');
+      // });
+
     });
+
   </script>
 
 </body>

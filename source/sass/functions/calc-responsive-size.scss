@@ -10,5 +10,9 @@
   $a: $a + $units;
   $b: $b + $units;
 
+  @if (100vw >= $w-max) {
+    @return $val-max;
+  }
+
   @return calc(#{$a} + (#{$val-max} - #{$val-min}) * (100vw - #{$b}) / (#{$w-max} - #{$w-min}));
 }
