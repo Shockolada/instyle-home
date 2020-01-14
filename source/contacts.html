@@ -11,13 +11,18 @@
   ================================================== -->
   <main>
 
-    <iframe class="youtube-video" width="560" height="315"
-      src="https://www.youtube.com/embed/glEiPXAYE-U?enablejsapi=1&version=3&playerapiid=ytplayer" frameborder="0"
-      allowfullscreen></iframe>
+    <!-- <iframe class="youtube-video" width="560" height="315"
+      src="https://www.youtube.com/embed/glEiPXAYE-U?enablejsapi=1&version=3&playerapiid=ytplayer&autoplay=1" frameborder="0"
+      allowfullscreen></iframe> -->
 
-    <div><a href="#" class="play-video">Play Video</a></div>
+      <!-- <iframe width="560" height="315" -->
+      <!-- src="https://www.youtube.com/embed/glEiPXAYE-U?autoplay=1"></iframe> -->
+
+      <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/glEiPXAYE-U?autoplay=1&amp;mute=1"></iframe> -->
+
+    <!-- <div><a href="#" class="play-video">Play Video</a></div>
     <div><a href="#" class="stop-video">Stop Video</a></div>
-    <div><a href="#" class="pause-video">Pause Video</a></div>
+    <div><a href="#" class="pause-video">Pause Video</a></div> -->
 
   </main> <!-- / PAGE CONTENT -->
 
@@ -25,17 +30,17 @@
 
   @@include('./html-partials/basic/scripts.html')
 
-  <script>
+  <!-- <script>
     $(document).ready(function () {
 
 
       $('a.play-video').click(function (evt) {
         evt.preventDefault();
-        let iframe = $('.youtube-video')[0];
-        let src = iframe.prop('src');
-        src += "&autoplay=1";
-        iframe.prop('src', src);
-        console.log('+');
+        // let iframe = $('.youtube-video')[0];
+        // let src = iframe.prop('src');
+        // src += "&autoplay=1";
+        // iframe.prop('src', src);
+        // console.log('+');
         $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"playVideo"}', '*');
       });
 
@@ -51,7 +56,7 @@
 
     });
 
-  </script>
+  </script> -->
 
 </body>
 

@@ -27,7 +27,8 @@
 
   <script>
     var map;
-    var mapPoint = [{
+    var mapPoint = [
+      {
         coords: {
           lat: 34.122830,
           lng: -118.418203
@@ -234,26 +235,24 @@
         marker, i;
 
       // Loop through our array of markers & place each one on the map
-      var popupContent,
-        popupContentSrc,
-        popupContentimgSrc,
-        popupContentLocation,
-        popupContentPrice;
-
+      var content,
+        contentSrc,
+        contentimgSrc,
+        contentLocation,
+        contentPrice;
 
       for (i = 0; i < mapPoint.length; i++) {
-        popupContent =
-          '<div class="infowindow__content"><a class="infowindow__link" href="' + popupContentSrc +
-          '"><div class="infowindow__img-wrap"><img src="' + popupContentimgSrc +
-          '" alt=""></div>' + popupContentLocation +
-          '</a><div class="infowindow__info"><span class="infowindow__price">' + popupContentPrice +
+        contentSrc = mapPoint[i].src;
+        contentimgSrc = mapPoint[i].imgSrc;
+        contentLocation = mapPoint[i].location;
+        contentPrice = mapPoint[i].price;
+
+        content =
+          '<div class="infowindow__content"><a class="infowindow__link" href="' + contentSrc +
+          '"><div class="infowindow__img-wrap"><img src="' + contentimgSrc +
+          '" alt=""></div>' + contentLocation +
+          '</a><div class="infowindow__info"><span class="infowindow__price">' + contentPrice +
           '</span></div></div>';
-
-        popupContentSrc = mapPoint[i].src;
-        popupContentimgSrc = mapPoint[i].imgSrc;
-        popupContentLocation = mapPoint[i].location;
-        popupContentimgPrice = mapPoint[i].price;
-
 
         marker = new google.maps.Marker({
           position: mapPoint[i].coords,
@@ -267,13 +266,13 @@
 
         // // Add info window to marker
         var infowindow = new google.maps.InfoWindow();
-        google.maps.event.addListener(marker, 'click', (function (marker, popupContent, infowindow) {
+        google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
           return function () {
-            infowindow.setContent(popupContent);
+            infowindow.setContent(content);
             infowindow.open(map, marker);
           };
-        })(marker, popupContent, infowindow));
-        
+        })(marker, content, infowindow));
+
         // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
         // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
         //   this.setZoom(13);
@@ -318,7 +317,7 @@
         }
       });
 
-      // Attach custom click event on cloned elements, 
+      // Attach custom click event on cloned elements,
       // trigger click event on corresponding link
       $(document).on('click', '.swiper-slide-duplicate', function (e) {
         $(selector)
