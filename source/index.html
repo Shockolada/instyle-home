@@ -271,39 +271,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJnxZZrzcKIzqtzvvOG53wTwi4-4uEg9c&callback=initMap">
   </script>
 
-  <script>
-    $(document).ready(function () {
-
-      // var videoSlide = $('.hero-slider__video');
-
-      $('.videoSlide').each(function (index) {
-        let videoContainer = $(this).find('.video');
-        let videoId = videoContainer.data('video-id');
-        let videoSrc = 'https://www.youtube.com/embed/' + videoId +
-        '?enablejsapi=1&version=3&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=' + videoId +
-        '&autoplay=1&amp;mute=1';
-        videoContainer.append('<iframe frameborder="0"></iframe>');
-        var iframe = $(this).find('iframe');
-        iframe.attr('src', videoSrc)
-        // .attr('allowfullscreen')
-        // .attr('frameborder','0');
-      });
-      $('.videoSlide iframe')[1].contentWindow.postMessage('{"event":"command","func":"pauseVideo"}', '*')
-      
-      // .contentWindow.postMessage('{"event":"command","func":"pauseVideo"}', '*')
-      // .contentWindow.postMessage('{"event":"command","func":"playVideo"}', '*')
-      
-      var heroSwiper = new Swiper('.hero-slider', {
-        loop: true,
-        effect: 'fade',
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-      })
-    });
-
-  </script>
 </body>
 
 </html>
