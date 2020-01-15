@@ -1,0 +1,39 @@
+.scroll-down-btn {
+  // display: none;
+}
+
+// @media (min-width: $desktop_m) {
+.scroll-down-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 50px;
+  height: 40px;
+}
+
+.scroll-down-btn__arrow {
+  position: absolute;
+  fill: $color-accent;
+
+  transition: fill 0.4s linear;
+}
+
+.scroll-down-btn__arrow--top {
+  left: 0;
+  top: 0;
+  opacity: 0.35;
+}
+
+.scroll-down-btn__arrow--bottom {
+  bottom: 0;
+  opacity: 1;
+}
+
+.scroll-down-btn:hover .scroll-down-btn__arrow,
+.scroll-down-btn:focus .scroll-down-btn__arrow {
+  fill: #ffffff;
+}
+
+// }

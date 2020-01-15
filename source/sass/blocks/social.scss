@@ -9,14 +9,12 @@
   margin-right: 5px;
 }
 
-.social__link {
-  outline: 1px solid #fff;
-}
+.social__link {}
 
 .social-link__icon {
   fill: #ffffff;
 
-  transition: 0.3s color linear;
+  transition: 0.3s fill linear;
 }
 
 .social__link:hover,

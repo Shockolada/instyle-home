@@ -1,17 +1,25 @@
-<div class="hero__wrap section">
+<div class="hero__wrap section wow fadeIn" data-wow-duration="2.5s">
   <div class="swiper-container hero__slider hero-slider">
     <!-- Slider -->
-    <div class="swiper-wrapper hero-slider__slides">
-      <div class="swiper-slide hero-slider__slide" style="background-image:url('img/hero.jpg')">
+    <div class="swiper-wrapper hero-slider__slides imageSlide">
+      <div class="swiper-slide hero-slider__slide">
+        <div class="hero-slider__image grayscale" style="background-image:url('img/hero.jpg')"></div>
         <div class="container hero-slider__slide-content">
           <h2 class="hero-slider__tagline">Ready to make your dream come true?</h2>
           <button class="button button--gray hero-slider__btn" type="button">Properties</button>
         </div>
       </div>
-      <div class="swiper-slide hero-slider__slide video">
-        <div class="hero-slider__video" data-video-id="kt9yDuo3K6c">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/kt9yDuo3K6c?enablejsapi=1&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=kt9yDuo3K6c" allowfullscreen></iframe>
+      <div class="swiper-slide hero-slider__slide videoSlide">
+        <!-- Выводить в data-video-id id видео с youtube -->
+        <div class="hero-slider__video video" data-video-id="kt9yDuo3K6c"></div>
+        <div class="container hero-slider__slide-content">
+          <h2 class="hero-slider__tagline">Ready to make your dream come true?</h2>
+          <button class="button button--gray hero-slider__btn" type="button">Properties</button>
         </div>
+      </div>
+      <div class="swiper-slide hero-slider__slide videoSlide">
+        <!-- Выводить в data-video-id id видео с youtube -->
+        <div class="hero-slider__video video" data-video-id="kt9yDuo3K6c"></div>
         <div class="container hero-slider__slide-content">
           <h2 class="hero-slider__tagline">Ready to make your dream come true?</h2>
           <button class="button button--gray hero-slider__btn" type="button">Properties</button>
@@ -21,7 +29,6 @@
 
 
     <!-- / Slider -->
-
     <div class="container hero">
       <div class="page-header__links">
         <ol class="property-links">
@@ -61,10 +68,10 @@
       </div>
 
       <a class="scroll-down-btn scrollDown" type="button" href="sect2">
-        <svg class="scroll-down-button__arrow--top scroll-down-button__arrow" width="50px" height="24px">
+        <svg class="scroll-down-btn__arrow--top scroll-down-btn__arrow" width="50px" height="24px">
           <use xlink:href="images/sprite.svg#arrow-down"></use>
         </svg>
-        <svg class="scroll-down-button__arrow--bottom scroll-down-button__arrow" width="50px" height="24px">
+        <svg class="scroll-down-btn__arrow--bottom scroll-down-btn__arrow" width="50px" height="24px">
           <use xlink:href="images/sprite.svg#arrow-down"></use>
         </svg>
       </a>

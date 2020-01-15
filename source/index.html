@@ -26,16 +26,14 @@
   @@include('./html-partials/basic/scripts.html')
 
   <script>
-    var map;
-    var mapPoint = [
-      {
+    var mapPoint = [{
         coords: {
           lat: 34.122830,
           lng: -118.418203
         },
         src: '#',
         imgSrc: 'img/properties-small/1.jpg',
-        location: '67 Beverly Park CT, Beverly Hills',
+        address: '67 Beverly Park CT, Beverly Hills',
         price: '$ 165,000,000',
       },
       {
@@ -45,7 +43,7 @@
         },
         src: '#',
         imgSrc: 'img/properties-small/3.jpg',
-        location: '9505 Lania LN, Beverly Hills',
+        address: '9505 Lania LN, Beverly Hills',
         price: '$ 129,000,000',
       },
       {
@@ -55,7 +53,7 @@
         },
         src: '#',
         imgSrc: 'img/properties-small/5.jpg',
-        location: '2571 Wallingford DR, Beverly Hills',
+        address: '2571 Wallingford DR, Beverly Hills',
         price: '$ 110,000,000',
       },
       {
@@ -65,7 +63,7 @@
         },
         src: '#',
         imgSrc: 'img/properties-small/6.jpg',
-        location: '1444 Angelo DR, Beverly Hills',
+        address: '1444 Angelo DR, Beverly Hills',
         price: '$ 110,000,000',
       },
       {
@@ -75,7 +73,7 @@
         },
         src: '#',
         imgSrc: 'img/properties-small/4.jpg',
-        location: '144 S Carolwood DR, Los Angeles',
+        address: '144 S Carolwood DR, Los Angeles',
         price: '$ 115,000,000',
       },
       {
@@ -85,7 +83,7 @@
         },
         src: '#',
         imgSrc: 'img/properties-small/2.jpg',
-        location: '1444 Angelo DR, Beverly Hills',
+        address: '1444 Angelo DR, Beverly Hills',
         price: '$ 150,000,000',
       },
     ];
@@ -94,8 +92,6 @@
       lat: 34.122830,
       lng: -118.418203
     };
-
-
 
     var mapStyles = [{
         "elementType": "geometry",
@@ -222,8 +218,7 @@
     ]
 
     function initMap() {
-
-      map = new google.maps.Map(document.getElementById('map'), {
+      var map = new google.maps.Map(document.getElementById('map'), {
         center: center,
         zoom: 13,
         disableDefaultUI: true,
@@ -231,26 +226,20 @@
       });
 
       // Add multiple markers to map
-      var infoWindow = new google.maps.InfoWindow(),
-        marker, i;
-
-      // Loop through our array of markers & place each one on the map
-      var content,
-        contentSrc,
-        contentimgSrc,
-        contentLocation,
-        contentPrice;
+      var marker;
+      var infowindow = new google.maps.InfoWindow();
 
       for (i = 0; i < mapPoint.length; i++) {
-        contentSrc = mapPoint[i].src;
-        contentimgSrc = mapPoint[i].imgSrc;
-        contentLocation = mapPoint[i].location;
-        contentPrice = mapPoint[i].price;
+        // Loop through our array of markers & place each one on the map
+        var contentSrc = mapPoint[i].src;
+        var contentimgSrc = mapPoint[i].imgSrc;
+        var contentAddress = mapPoint[i].address;
+        var contentPrice = mapPoint[i].price;
 
         content =
           '<div class="infowindow__content"><a class="infowindow__link" href="' + contentSrc +
           '"><div class="infowindow__img-wrap"><img src="' + contentimgSrc +
-          '" alt=""></div>' + contentLocation +
+          '" alt=""></div>' + contentAddress +
           '</a><div class="infowindow__info"><span class="infowindow__price">' + contentPrice +
           '</span></div></div>';
 
@@ -265,114 +254,56 @@
         });
 
         // // Add info window to marker
-        var infowindow = new google.maps.InfoWindow();
         google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
           return function () {
+            map.setZoom(14);
+            map.panTo(marker.getPosition());
             infowindow.setContent(content);
             infowindow.open(map, marker);
           };
         })(marker, content, infowindow));
-
-        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-        // var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-        //   this.setZoom(13);
-        //   //map.setCenter(new google.maps.LatLng(47.024, 28.832));
-        //   // map.setCenter({lat: 47.024, lng: 28.832});
-        //   google.maps.event.removeListener(boundsListener);
-        // });
       }
     }
 
   </script>
 
-
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJnxZZrzcKIzqtzvvOG53wTwi4-4uEg9c&callback=initMap">
   </script>
 
-
-
   <script>
     $(document).ready(function () {
-      // Init fancybox
-      // =============
-      var selector = '.preview-slider__slide:not(.swiper-slide-duplicate) a';
 
-      // Skip cloned elements
-      $().fancybox({
-        selector: selector,
-        backFocus: false,
-        thumbs: false,
-        hash: false,
-        loop: true,
-        animationEffect: "fade",
-        beforeClose: function (instance) {
+      // var videoSlide = $('.hero-slider__video');
 
-          // This is index of current fancyBox slide
-          // console.log(instance.currIndex);
-
-          // Update position of the slider
-          previewSwiper.slideTo(instance.currIndex, 0);
-
-        }
+      $('.videoSlide').each(function (index) {
+        let videoContainer = $(this).find('.video');
+        let videoId = videoContainer.data('video-id');
+        let videoSrc = 'https://www.youtube.com/embed/' + videoId +
+        '?enablejsapi=1&version=3&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=' + videoId +
+        '&autoplay=1&amp;mute=1';
+        videoContainer.append('<iframe frameborder="0"></iframe>');
+        var iframe = $(this).find('iframe');
+        iframe.attr('src', videoSrc)
+        // .attr('allowfullscreen')
+        // .attr('frameborder','0');
       });
-
-      // Attach custom click event on cloned elements,
-      // trigger click event on corresponding link
-      $(document).on('click', '.swiper-slide-duplicate', function (e) {
-        $(selector)
-          .eq(($(e.currentTarget).attr("data-swiper-slide-index") || 0) % $(selector).length)
-          .trigger("click.fb-start", {
-            $trigger: $(this)
-          });
-
-        return false;
-      });
-
-
-      var previewSwiper = new Swiper('.preview-slider', {
-        slidesPerView: 1,
-        breakpoints: {
-          560: {
-            slidesPerView: 2,
-          },
-          940: {
-            slidesPerView: 3,
-          },
-          1200: {
-            slidesPerView: 4,
-          },
-          1440: {
-            slidesPerView: 5,
-          },
-        },
-        loop: true
-      })
-    });
-
-  </script>
-
-  <script>
-    $(document).ready(function () {
+      $('.videoSlide iframe')[1].contentWindow.postMessage('{"event":"command","func":"pauseVideo"}', '*')
+      
+      // .contentWindow.postMessage('{"event":"command","func":"pauseVideo"}', '*')
+      // .contentWindow.postMessage('{"event":"command","func":"playVideo"}', '*')
+      
       var heroSwiper = new Swiper('.hero-slider', {
-        loop: true
+        loop: true,
+        effect: 'fade',
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
       })
-
-
-      // $('.hero-slider__video').click(function () {
-      //   console.log('+');
-      //   let iframe = $(this).closest('.hero-slider__slide').find('iframe')
-      //   let src = iframe.prop('src');
-      //   src += "&autoplay=1";
-      //   iframe.prop('src', src);
-
-      //   // $('iframe').attr('allow', 'autoplay');
-      // });
-
     });
 
   </script>
-
 </body>
 
 </html>
