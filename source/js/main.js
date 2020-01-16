@@ -120,92 +120,66 @@ $(document).ready(function () {
 });
 
 
+
 $(document).ready(function () {
 
-  $(document).ready(function () {
+  var heroSwiper = new Swiper('.hero-slider', {
+    init: false,
+    loop: true,
+    effect: 'fade',
+    simulateTouch: false,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+  })
 
-    var heroSwiper = new Swiper('.hero-slider', {
-      init: false,
-      loop: true,
-      effect: 'fade',
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-    })
+  $('.videoSlide').each(function (index) {
+    var videoContainer = $(this).find('.video');
+    var videoId = videoContainer.data('video-id');
+    var videoSrc = 'https://www.youtube.com/embed/' + videoId +
+      '?enablejsapi=1&version=3&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=' + videoId +
+      '&autoplay=1&amp;mute=1';
+    videoContainer.append('<iframe frameborder="0" allowfullscreen></iframe>');
+    var iframe = $(this).find('iframe');
+    iframe.attr('src', videoSrc);
+  });
 
-    // var videoSlide = $('.hero-slider__video');
-
-    $('.videoSlide').each(function (index) {
-      var videoContainer = $(this).find('.video');
-      var videoId = videoContainer.data('video-id');
-      var videoSrc = 'https://www.youtube.com/embed/' + videoId +
-        '?enablejsapi=1&version=3&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=' + videoId +
-        '&autoplay=1&amp;mute=1';
-      videoContainer.append('<iframe frameborder="0" allowfullscreen></iframe>');
-      var iframe = $(this).find('iframe');
-      iframe.attr('src', videoSrc);
-
-      // iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo"}', '*')
-
-    });
-    // .contentWindow.postMessage('{"event":"command","func":"pauseVideo"}', '*')
-    // .contentWindow.postMessage('{"event":"command","func":"playVideo"}', '*')
-
-    heroSwiper.on('init', function () {
-      /* do something */
-    });
-
-    // init Swiper
-    heroSwiper.init();
+  // init Swiper
+  heroSwiper.init();
 
 
-    (function ($) {
-      jQuery(document).ready(function ($) {
-        heroSwiper.on("transitionStart", function (swiper) {
-          var currentSlide, slideType, player, command;
-          currentSlide = $('.swiper-container').find(".swiper-slide-active");
-          previousSlide = $('.swiper-container').find(".swiper-slide-prev");
+  (function ($) {
+    jQuery(document).ready(function ($) {
+      heroSwiper.on("transitionStart", function (swiper) {
+        var currentSlide, slideType, player, command;
+        currentSlide = $('.swiper-container').find(".swiper-slide-active");
+        previousSlide = $('.swiper-container').find(".swiper-slide-prev");
 
-          slideType = currentSlide.attr("class").split(" ")[2];
-          player = currentSlide.find("iframe").get(0);
+        slideType = currentSlide.data("vedeo-type");
+        player = currentSlide.find("iframe").get(0);
+        command = {
+          "event": "command",
+          "func": "playVideo"
+        };
+        if (player != undefined) {
+          player.contentWindow.postMessage(JSON.stringify(command), "*");
+        }
+
+        slideType = previousSlide.attr("class");
+        if (slideType != undefined) {
+          slideType = slideType;
+          player = previousSlide.find("iframe").get(0);
           command = {
             "event": "command",
-            "func": "playVideo"
+            "func": "pauseVideo"
           };
+          // If you don't using autoplay you should use "stopVideo" instead of "pauseVideo"
           if (player != undefined) {
             player.contentWindow.postMessage(JSON.stringify(command), "*");
           }
-
-          slideType = previousSlide.attr("class");
-          if (slideType != undefined) {
-            slideType = slideType.split(" ")[2];
-            player = previousSlide.find("iframe").get(0);
-            command = {
-              "event": "command",
-              "func": "pauseVideo"
-            };
-            // If you don't using autoplay you should use "stopVideo" instead of "pauseVideo"
-            if (player != undefined) {
-              player.contentWindow.postMessage(JSON.stringify(command), "*");
-            }
-          }
-        });
+        }
       });
-    })(jQuery);
-
-
-  });
-
-
-
-
-  var heroSwiper = new Swiper('.hero-slider', {
-    loop: true,
-    effect: 'fade',
-    // autoplay: {
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
-  })
+    });
+  })(jQuery);
 });

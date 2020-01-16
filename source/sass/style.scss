@@ -18,10 +18,12 @@
 @import "libs/jquery.fancybox.scss";
 
 /* HELPERS */
+@import "helpers/page-content.scss";
 @import "helpers/container.scss";
 @import "helpers/section.scss";
 @import "helpers/button.scss";
 @import "helpers/title.scss";
+@import "helpers/subtitle.scss";
 @import "helpers/section-description.scss";
 @import "helpers/gm-styles.scss";
 @import "helpers/grayscale.scss";

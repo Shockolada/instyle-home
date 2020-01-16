@@ -10,12 +10,24 @@
   justify-content: flex-end;
   height: 100%;
   padding-top: 100px;
-  // padding-bottom: 100px;
+}
+
+.hero__scroll-down {
+  display: none;
 }
 
 @media (min-width: $desktop_s) {
   .hero {
     padding-top: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 120px;
+  }
+
+  .hero__scroll-down {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
   }
 }
