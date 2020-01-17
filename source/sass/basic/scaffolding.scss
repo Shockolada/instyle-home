@@ -22,3 +22,18 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+a {
+  color: $color-text;
+  text-decoration: none;
+  transition: 0.3s color linear;
+}
+
+a:hover,
+a:focus {
+  color: $color-accent;
+}
+
+*:focus {
+  outline-color: $color-accent;
+}

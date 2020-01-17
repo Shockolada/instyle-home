@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header-black.html')
+
+  <!-- PAGE CONTENT
+  ================================================== -->
+  <main class="page-content">
+
+    <section class="container section">
+      <h2 class="title wow fadeIn" data-wow-duration="1s">Search properties</h2>
+
+      <div class="map wow fadeIn" data-wow-duration="2s">
+        <div class="map__btn-wrap">
+          <button class="button map__btn showMap" type="button">Show map</button>
+        </div>
+        <div class="map__wrap">
+          <div id="map" class="map__map" style="background-image: url('img/map.jpg');">
+          </div>
+        </div>
+      </div>
+      <div class="properties-map--three-in-row">
+        <ul class="properties-map__list wow fadeIn" data-wow-duration="2s">
+          <li class="properties-map__item">
+            <a class="properties-map__link" href="#">
+              <!-- Резать фото 290 х 125 -->
+              <div class="properties-map__img-wrap">
+                <img class="properties-map__img" src="img/properties-small/1.jpg" alt="67 Beverly Park CT, Beverly Hills">
+              </div>
+              <div class="properties-map__item-info">
+                <span class="properties-map__price">$ 165,000,000</span>
+                <span class="properties-map__info">67 Beverly Park CT,<br>
+                  Beverly Hills</span>
+              </div>
+            </a>
+          </li>
+          <li class="properties-map__item">
+            <a class="properties-map__link" href="#">
+              <div class="properties-map__img-wrap">
+                <img class="properties-map__img" src="img/properties-small/2.jpg" alt="0 Tortuoso Way, Los Angeles">
+              </div>
+              <div class="properties-map__item-info">
+                <span class="properties-map__price">$ 150,000,000</span>
+                <span class="properties-map__info">0 Tortuoso Way,<br>
+                  Los Angeles</span>
+              </div>
+            </a>
+          </li>
+          <li class="properties-map__item">
+            <a class="properties-map__link" href="#">
+              <div class="properties-map__img-wrap">
+                <img class="properties-map__img" src="img/properties-small/3.jpg" alt="9505 Lania LN, Beverly Hills">
+              </div>
+              <div class="properties-map__item-info">
+                <span class="properties-map__price">$ 129,000,000</span>
+                <span class="properties-map__info">9505 Lania LN,<br>
+                  Beverly Hills</span>
+              </div>
+            </a>
+          </li>
+          <li class="properties-map__item">
+            <a class="properties-map__link" href="#">
+              <div class="properties-map__img-wrap">
+                <img class="properties-map__img" class="properties-map__img" src="img/properties-small/4.jpg"
+                  alt="144 S Carolwood DR, Los Angeles">
+              </div>
+              <div class="properties-map__item-info">
+                <span class="properties-map__price">$ 115,000,000</span>
+                <span class="properties-map__info">144 S Carolwood DR,<br>
+                  Los Angeles</span>
+              </div>
+            </a>
+          </li>
+          <li class="properties-map__item">
+            <a class="properties-map__link" href="#">
+              <div class="properties-map__img-wrap">
+                <img class="properties-map__img" src="img/properties-small/5.jpg"
+                  alt="2571 Wallingford DR, Beverly Hills">
+              </div>
+              <div class="properties-map__item-info">
+                <span class="properties-map__price">$ 110,000,000</span>
+                <span class="properties-map__info">2571 Wallingford DR,<br>
+                  Beverly Hills</span>
+              </div>
+            </a>
+          </li>
+          <li class="properties-map__item">
+            <a class="properties-map__link" href="#">
+              <div class="properties-map__img-wrap">
+                <img class="properties-map__img" src="img/properties-small/6.jpg" alt="1444 Angelo DR, Beverly Hills">
+              </div>
+              <div class="properties-map__item-info">
+                <span class="properties-map__price">$ 110,000,000</span>
+                <span class="properties-map__info">1444 Angelo DR,<br>
+                  Beverly Hills</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    @@include('./html-partials/blocks/preview-slider.html')
+
+  </main> <!-- / PAGE CONTENT -->
+
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+  @@include('./html-partials/basic/scripts.html')
+
+  <script>
+    var mapPoint = [{
+        coords: {
+          lat: 34.122830,
+          lng: -118.418203
+        },
+        src: '#',
+        imgSrc: 'img/properties-small/1.jpg',
+        address: '67 Beverly Park CT, Beverly Hills',
+        price: '$ 165,000,000',
+      },
+      {
+        coords: {
+          lat: 34.107333,
+          lng: -118.402227
+        },
+        src: '#',
+        imgSrc: 'img/properties-small/3.jpg',
+        address: '9505 Lania LN, Beverly Hills',
+        price: '$ 129,000,000',
+      },
+      {
+        coords: {
+          lat: 34.118602,
+          lng: -118.434076
+        },
+        src: '#',
+        imgSrc: 'img/properties-small/5.jpg',
+        address: '2571 Wallingford DR, Beverly Hills',
+        price: '$ 110,000,000',
+      },
+      {
+        coords: {
+          lat: 34.094158,
+          lng: -118.434540
+        },
+        src: '#',
+        imgSrc: 'img/properties-small/6.jpg',
+        address: '1444 Angelo DR, Beverly Hills',
+        price: '$ 110,000,000',
+      },
+      {
+        coords: {
+          lat: 34.082067,
+          lng: -118.425733
+        },
+        src: '#',
+        imgSrc: 'img/properties-small/4.jpg',
+        address: '144 S Carolwood DR, Los Angeles',
+        price: '$ 115,000,000',
+      },
+      {
+        coords: {
+          lat: 34.086910,
+          lng: -118.444561
+        },
+        src: '#',
+        imgSrc: 'img/properties-small/2.jpg',
+        address: '1444 Angelo DR, Beverly Hills',
+        price: '$ 150,000,000',
+      },
+    ];
+
+    var center = {
+      lat: 34.122830,
+      lng: -118.418203
+    };
+
+    var mapStyles = [{
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#f5f5f5"
+        }]
+      },
+      {
+        "elementType": "labels.icon",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#616161"
+        }]
+      },
+      {
+        "elementType": "labels.text.stroke",
+        "stylers": [{
+          "color": "#f5f5f5"
+        }]
+      },
+      {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#bdbdbd"
+        }]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#eeeeee"
+        }]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#757575"
+        }]
+      },
+      {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#e5e5e5"
+        }]
+      },
+      {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9e9e9e"
+        }]
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#ffffff"
+        }]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#757575"
+        }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#dadada"
+        }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#616161"
+        }]
+      },
+      {
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9e9e9e"
+        }]
+      },
+      {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#e5e5e5"
+        }]
+      },
+      {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#eeeeee"
+        }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{
+          "color": "#c9c9c9"
+        }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [{
+          "color": "#9e9e9e"
+        }]
+      }
+    ]
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: center,
+        zoom: 13,
+        disableDefaultUI: true,
+        styles: mapStyles
+      });
+
+      // Add multiple markers to map
+      var marker;
+      var infowindow = new google.maps.InfoWindow();
+
+      for (i = 0; i < mapPoint.length; i++) {
+        // Loop through our array of markers & place each one on the map
+        var contentSrc = mapPoint[i].src;
+        var contentimgSrc = mapPoint[i].imgSrc;
+        var contentAddress = mapPoint[i].address;
+        var contentPrice = mapPoint[i].price;
+
+        content =
+          '<div class="infowindow__content"><a class="infowindow__link" href="' + contentSrc +
+          '"><div class="infowindow__img-wrap"><img src="' + contentimgSrc +
+          '" alt=""></div>' + contentAddress +
+          '</a><div class="infowindow__info"><span class="infowindow__price">' + contentPrice +
+          '</span></div></div>';
+
+        marker = new google.maps.Marker({
+          position: mapPoint[i].coords,
+          map: map,
+          icon: {
+            url: "img/marker.png",
+            scaledSize: new google.maps.Size(24, 24),
+            size: new google.maps.Size(24, 24),
+          }
+        });
+
+        // // Add info window to marker
+        google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+          return function () {
+            map.setZoom(14);
+            map.panTo(marker.getPosition());
+            infowindow.setContent(content);
+            infowindow.open(map, marker);
+          };
+        })(marker, content, infowindow));
+      }
+    }
+
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJnxZZrzcKIzqtzvvOG53wTwi4-4uEg9c&callback=initMap">
+  </script>
+
+</body>
+
+</html>

@@ -11,18 +11,49 @@
   ================================================== -->
   <main class="page-content">
     <section class="container section contacts">
-      <h1 class="title wow fadeIn" data-wow-duration="1s">Contacts</h1>
-      <h2 class="subtitle wow fadeIn" data-wow-duration="1.5s">Contact details</h2>
+      <h1 class="title title--m0 wow fadeIn" data-wow-duration="1s">Contacts</h1>
+      <div class="contacts__info section wow fadeIn" data-wow-duration="1.5s">
+        <h2 class="subtitle">Contact details</h2>
+        <span class="contacts__name">Instyle Homes</span>
+        <div class="contacts__list">
+          <div class="contacts__item">257 North Canon Drive<br>
+            Beverly Hills, CA 90210<br>
+            DRE 011606183t</div>
+          <div class="contacts__item">
+            <a class="contacts__item-link" href="tel:+13102783311">+1 310 278 3311</a>
+            <a class="contacts__item-link" href="mailto:ingo@instylehomes.com">ingo@instylehomes.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="contacts__form-block wow fadeIn" data-wow-duration="1.5s">
+        <h2 class="subtitle">Online inquiry</h2>
+        <form class="form" action="">
+          <p class="form__item form__item--xs">
+            <input type="text" name="user-name" placeholder="Name">
+          </p>
+          <p class="form__item form__item--xs">
+            <input type="text" name="user-name" placeholder="Email">
+          </p>
+          <p class="form__item form__item--xs">
+            <input type="text" name="user-name" placeholder="Phone">
+          </p>
+          <p class="form__item form__item--xs">
+            <select name="" id="m-source">
+              <option value="question" selected disabled>What are you interested in?</option>
+              <option value="object1">144 S Carolwood DR, Los Angeles</option>
+              <option value="object2">9505 Lania LN, Beverly Hills</option>
+            </select>          </p>
 
-      <div class="contacts__info">
-        
-
+          <div class="form__item">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+          </div>
+        </form>
       </div>
 
 
     </section>
 
-  
+
 
     @@include('./html-partials/blocks/preview-slider.html')
 

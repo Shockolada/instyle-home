@@ -1,28 +1,36 @@
 .button {
   display: inline-block;
   padding: 10px 30px;
-  border: none;
+  border: 1px solid $color-dark;
   text-decoration: none;
   text-align: center;
-  color: #ffffff;
+  color: $color-text;
   white-space: nowrap;
   font-size: 20px;
   font-weight: 700;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
-  background-color: $color-accent;
+  background-color: transparent;
 
   transition: all 0.3s linear;
 
   cursor: pointer;
 }
 
-.button--gray {
+.button--o-white {
+  border: none;
+  color: $color-text-white;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.button--gray:hover,
-.button--gray:focus {
+.button:hover,
+.button:focus {
+  background-color: $color-dark;
+  color: $color-text-white;
+}
+
+.button--o-white:hover,
+.button--o-white:focus {
   background-color: #ffffff;
   color: $color-text;
 }

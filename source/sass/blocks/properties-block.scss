@@ -67,9 +67,10 @@
 .properties-block__link:hover,
 .properties-block__link:focus {
   color: #919191;
+  color: $color-accent;
 
   svg {
-    fill: $color-text;
+    fill: $color-accent;
     right: -10px;
   }
 }

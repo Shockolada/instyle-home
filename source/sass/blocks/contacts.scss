@@ -1,0 +1,34 @@
+.contacts {
+  width: 100%;
+}
+
+.contacts__name {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+@media (min-width: $tablet) {
+  .contacts__info {
+    width: 100%;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .contacts__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contacts__item {
+    margin: 0;
+  }
+}

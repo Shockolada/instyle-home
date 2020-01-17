@@ -66,12 +66,8 @@
 
   .properties-map__item {
     width: calc(50% - 10px);
-  }
-
-  .properties-map__item:nth-of-type(odd) {
     margin-right: 10px;
   }
-
 }
 
 @media (min-width: $desktop_xs) {
@@ -79,10 +75,13 @@
     display: flex;
   }
 
-  .properties-map__list {
+  .properties-map__list-wrap {
     width: 50%;
-    margin-bottom: -10px;
     padding-right: 15px;
+  }
+
+  .properties-map__list {
+    margin-bottom: -10px;
   }
 
   .properties-map__map-wrap {
@@ -97,5 +96,22 @@
 
   .properties-map__map-wrap {
     height: auto;
+  }
+
+  .properties-map--three-in-row {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+
+    .properties-map__list {
+      margin-right: -30px;
+    }
+  
+    .properties-map__item {
+      width: calc(100% / 3 - 30px);
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+
   }
 }

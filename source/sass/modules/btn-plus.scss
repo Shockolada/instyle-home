@@ -1,0 +1,51 @@
+.btn-plus {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    transition: all 1s cubic-bezier(.25,1.7,.35,.8);;
+    transition: all 0.3s linear;
+  }
+
+  &::before {
+    width: 70%;
+    height: 2px;
+  }
+
+  &::after {
+    width: 2px;
+    height: 70%;
+  }
+}
+
+.btn-plus.active {
+  &::before {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.btn-plus:hover,
+.btn-plus:focus {
+
+  &::before,
+  &::after {
+    background-color: $color-accent;
+  }
+}

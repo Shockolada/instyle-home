@@ -31,6 +31,7 @@
 /* MODULES */
 @import "modules/burger-btn.scss";
 @import "modules/scroll-down-btn.scss";
+@import "modules/btn-plus.scss";
 
 /* BLOCKS */
 @import "blocks/main/page-header.scss";
@@ -38,6 +39,7 @@
 @import "blocks/main/main-nav.scss";
 @import "blocks/main/submenu.scss";
 @import "blocks/main/page-footer.scss";
+@import "blocks/main/form.scss";
 
 @import "blocks/hero.scss";
 @import "blocks/hero-slider.scss";
@@ -46,3 +48,5 @@
 @import "blocks/properties-block.scss";
 @import "blocks/properties-map.scss";
 @import "blocks/preview-slider.scss";
+@import "blocks/contacts.scss";
+@import "blocks/map.scss";
