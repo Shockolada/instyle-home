@@ -1,8 +1,9 @@
 <div class="hero__wrap section wow fadeIn" data-wow-duration="2.5s">
   <div class="swiper-container hero__slider hero-slider">
     <!-- Slider -->
-    <div class="swiper-wrapper hero-slider__slides imageSlide">
-      <div class="swiper-slide hero-slider__slide">
+    <div class="swiper-wrapper hero-slider__slides">
+
+      <div class="swiper-slide hero-slider__slide image-slide">
         <div class="hero-slider__image grayscale image" style="background-image:url('img/hero-1.jpg')"></div>
         <div class="container hero-slider__slide-content">
           <h2 class="hero-slider__tagline">
@@ -13,12 +14,26 @@
           </button>
         </div>
       </div>
-      <div class="swiper-slide hero-slider__slide videoSlide">
-        <!-- Выводить в data-video-id id видео с youtube -->
-        <div class="hero-slider__video video youtube grayscale" data-vedeo-type="youtube" data-video-id="RKH-sNtXebQ">
-          <!-- <iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/RKH-sNtXebQ?enablejsapi=1&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=RKH-sNtXebQ&start=1" frameborder="0" allowfullscreen></iframe>  -->
-          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/RKH-sNtXebQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+      <div class="swiper-slide hero-slider__slide video-slide">
+        <!-- Выводить в data-video-id id видео vimeo -->
+        <div class="hero-slider__video grayscale video-container" data-video-type="vimeo" data-video-id="375540434">
+          <!-- <iframe
+                  src="https://player.vimeo.com/video/375540434?api=1&byline=0&portrait=0&title=0&background=1&mute=1&loop=1&autoplay=0&id=375540434"
+                  width="980" height="520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
         </div>
+        <div class="container hero-slider__slide-content">
+          <h2 class="hero-slider__tagline">
+            Vimeo video
+          </h2>
+          <button class="button button--o-white hero-slider__btn" type="button">
+            Properties
+          </button>
+        </div>
+      </div>
+
+      <div class="swiper-slide hero-slider__slide image-slide">
+        <div class="hero-slider__image grayscale" style="background-image:url('img/hero.jpg')"></div>
         <div class="container hero-slider__slide-content">
           <h2 class="hero-slider__tagline">
             Ready to make your dream come true?
@@ -28,39 +43,24 @@
           </button>
         </div>
       </div>
-      <!-- <div class="swiper-slide hero-slider__slide">
-        <div class="hero-slider__image grayscale image" style="background-image:url('img/hero.jpg')"></div>
+
+      <div class="swiper-slide hero-slider__slide video-slide">
+        <!-- Выводить в data-video-id id видео с youtube -->
+        <div class="hero-slider__video grayscale video-container" data-video-type="youtube" data-video-id="RKH-sNtXebQ">
+          <!-- <iframe
+            src="https://www.youtube.com/embed/RKH-sNtXebQ?enablejsapi=1&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=RKH-sNtXebQ&start=1"
+            frameborder="0" allowfullscreen></iframe> -->
+        </div>
         <div class="container hero-slider__slide-content">
           <h2 class="hero-slider__tagline">
-            Ready to make your dream come true?
+            Youtube video
           </h2>
           <button class="button button--o-white hero-slider__btn" type="button">
             Properties
           </button>
         </div>
-      </div> -->
-      <!-- <div class="swiper-slide hero-slider__slide videoSlide">
-        <div class="hero-slider__video video youtube grayscale" data-vedeo-type="youtube" data-video-id="v02ULp_v6Uk"></div>
-        <div class="container hero-slider__slide-content">
-          <h2 class="hero-slider__tagline">
-            Ready to make your dream come true?
-          </h2>
-          <button class="button button--o-white hero-slider__btn" type="button">
-            Properties
-          </button>
-        </div>
-      </div> -->
-      <!-- <div class="swiper-slide hero-slider__slide">
-        <div class="hero-slider__image grayscale image" style="background-image:url('img/hero.jpg')"></div>
-        <div class="container hero-slider__slide-content">
-          <h2 class="hero-slider__tagline">
-            Ready to make your dream come true?
-          </h2>
-          <button class="button button--o-white hero-slider__btn" type="button">
-            Properties
-          </button>
-        </div>
-      </div> -->
+      </div>
+
     </div>
     <!-- / Slider -->
 
@@ -110,6 +110,10 @@
           <use xlink:href="img/sprite.svg#arrow-down"></use>
         </svg>
       </button>
+
+      <div class="hero-slider__progress-wrap">
+        <div class="hero-slider__progress"></div>
+      </div>
     </div>
   </div>
 </div>

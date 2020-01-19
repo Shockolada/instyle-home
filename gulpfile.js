@@ -80,7 +80,7 @@ gulp.task('server', function () {
 
   /* Следим за файлами и перезагружаем страницу если были изменения */
   gulp.watch('source/**/*.html', gulp.series('html')).on('change', server.reload);
-  gulp.watch('source/js/**/*.js', gulp.series('js')).on('change', server.reload);
+  gulp.watch('source/js/**/*.js', gulp.series('js', 'copy')).on('change', server.reload);
   gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('styles')); // Обновление страницы браузера в задаче 'styles'
   gulp.watch('source/css/**/*.css', gulp.series('copy')).on('change', server.reload);
   gulp.watch('source/img/**/*.{png,jpg,svg}', gulp.series('imagesmin')).on('change', server.reload);
@@ -161,8 +161,8 @@ gulp.task('images', gulp.series('svgsprite', 'pngsprite', 'imagesmin', function 
 /* COPY FILES FROM SOURCE */
 gulp.task('copy', function () {
   return gulp.src([                                     // Что попировать
-      'source/css/**/*.css',                            // фавиконки
-      'source/js/**/*.js',                              // фавиконки
+      'source/css/**/*.css',                            // Копировать отдельные css файлы без сжатия
+      'source/js/scripts/*.js',                         // Копировать отдельные скрипты без сжатия
       'source/fonts/**/*.{woff,woff2,otf,ttf}',         // Шрифты
       'source/favocons/**/*.*',                         // фавиконки
       'source/*.ico'                                    // фавиконки
