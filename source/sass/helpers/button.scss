@@ -17,6 +17,12 @@
   cursor: pointer;
 }
 
+.button--gray {
+  border: none;
+  color: $color-text-white;
+  background-color: $color-darker-gray;
+}
+
 .button--o-white {
   border: none;
   color: $color-text-white;

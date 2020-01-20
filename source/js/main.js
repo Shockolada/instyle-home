@@ -61,6 +61,11 @@ $(document).ready(function () {
       });
     });
   }
+
+  /* SHOW MAP */
+  $('.showMapBtn').click(function () {
+    $('.map__wrap').fadeToggle(500);
+  });
 });
 
 

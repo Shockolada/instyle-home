@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('./html-partials/basic/head.html')
+
+<body>
+
+  @@include('./html-partials/blocks/main/page-header.html')
+
+  <!-- PAGE CONTENT
+  ================================================== -->
+  <main>
+
+    <div class=" wow fadeIn" data-wow-duration="1.5s">
+      <h2 class="title title--m0">Make an enquiry</h2>
+      <p class="section-description section-description--s">For more information on Minthis or to request that a member of our sales team contact you, please fill the form below.</p>
+      <form class="form form-request" action="">
+        <p class="form__item form__item--xs">
+          <input type="text" name="user-name" placeholder="Name">
+        </p>
+        <p class="form__item form__item--xs">
+          <input type="text" name="user-name" placeholder="Email">
+        </p>
+        <p class="form__item form__item--xs">
+          <input type="text" name="user-name" placeholder="Phone">
+        </p>
+        <p class="form__item form__item--xs">
+          <select name="" id="m-source">
+            <option value="question" selected disabled>What are you interested in?</option>
+            <option value="object1">144 S Carolwood DR, Los Angeles</option>
+            <option value="object2">9505 Lania LN, Beverly Hills</option>
+          </select> </p>
+
+        <div class="form__item">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+        </div>
+
+        <button class="button button--gray form-request__btn" type="submit">Submit</button>
+      </form>
+    </div>
+
+    @@include('./html-partials/blocks/preview-slider.html')
+
+  </main> <!-- / PAGE CONTENT -->
+
+  @@include('./html-partials/blocks/main/page-footer.html')
+
+  @@include('./html-partials/basic/scripts.html')
+
+</body>
+
+</html>

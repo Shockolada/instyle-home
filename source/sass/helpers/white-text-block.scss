@@ -1,0 +1,9 @@
+.white-text-block {
+  background-color: #ffffff;
+}
+
+@media (min-width: $tablet) {
+  .white-text-block {
+    padding: 30px 40px;
+  }
+}

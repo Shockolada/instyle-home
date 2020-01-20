@@ -24,9 +24,11 @@
 @import "helpers/button.scss";
 @import "helpers/title.scss";
 @import "helpers/subtitle.scss";
+@import "helpers/text-content.scss";
 @import "helpers/section-description.scss";
 @import "helpers/gm-styles.scss";
 @import "helpers/grayscale.scss";
+@import "helpers/white-text-block.scss";
 
 /* MODULES */
 @import "modules/burger-btn.scss";
@@ -50,3 +52,5 @@
 @import "blocks/preview-slider.scss";
 @import "blocks/contacts.scss";
 @import "blocks/map.scss";
+@import "blocks/form-request.scss";
+@import "blocks/story.scss";
