@@ -30,60 +30,60 @@
 
   <script>
     var mapPoint = [{
-        coords: {
-          lat: 34.122830,
-          lng: -118.418203
-        },
+        // coords: {
+        latitude: '34.122830',
+        longitude: '-118.418203',
+        // },
         src: '#',
         imgSrc: 'img/properties-small/1.jpg',
         address: '67 Beverly Park CT, Beverly Hills',
         price: '$ 165,000,000',
       },
       {
-        coords: {
-          lat: 34.107333,
-          lng: -118.402227
-        },
+        // coords: {
+        latitude: '34.107333',
+        longitude: '-118.402227',
+        // },
         src: '#',
         imgSrc: 'img/properties-small/3.jpg',
         address: '9505 Lania LN, Beverly Hills',
         price: '$ 129,000,000',
       },
       {
-        coords: {
-          lat: 34.118602,
-          lng: -118.434076
-        },
+        // coords: {
+        latitude: '34.118602',
+        longitude: '-118.434076',
+        // },
         src: '#',
         imgSrc: 'img/properties-small/5.jpg',
         address: '2571 Wallingford DR, Beverly Hills',
         price: '$ 110,000,000',
       },
       {
-        coords: {
-          lat: 34.094158,
-          lng: -118.434540
-        },
+        // coords: {
+        latitude: '34.094158',
+        longitude: '-118.434540',
+        // },
         src: '#',
         imgSrc: 'img/properties-small/6.jpg',
         address: '1444 Angelo DR, Beverly Hills',
         price: '$ 110,000,000',
       },
       {
-        coords: {
-          lat: 34.082067,
-          lng: -118.425733
-        },
+        // coords: {
+        latitude: '34.082067',
+        longitude: '-118.425733',
+        // },
         src: '#',
         imgSrc: 'img/properties-small/4.jpg',
         address: '144 S Carolwood DR, Los Angeles',
         price: '$ 115,000,000',
       },
       {
-        coords: {
-          lat: 34.086910,
-          lng: -118.444561
-        },
+        // coords: {
+        latitude: '34.086910',
+        longitude: '-118.444561',
+        // },
         src: '#',
         imgSrc: 'img/properties-small/2.jpg',
         address: '1444 Angelo DR, Beverly Hills',
@@ -93,7 +93,7 @@
 
     var center = {
       lat: 34.122830,
-      lng: -118.418203
+      lng: -118.418203,
     };
 
     var mapStyles = [{
@@ -238,6 +238,10 @@
         var contentimgSrc = mapPoint[i].imgSrc;
         var contentAddress = mapPoint[i].address;
         var contentPrice = mapPoint[i].price;
+        var coords = {
+          lat: Number(mapPoint[i].latitude),
+          lng: Number(mapPoint[i].longitude),
+        };
 
         content =
           '<div class="infowindow__content"><a class="infowindow__link" href="' + contentSrc +
@@ -247,7 +251,7 @@
           '</span></div></div>';
 
         marker = new google.maps.Marker({
-          position: mapPoint[i].coords,
+          position: coords,
           map: map,
           icon: {
             url: "img/marker.png",
