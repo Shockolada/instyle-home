@@ -119,3 +119,18 @@ $(document).ready(function () {
   })
 });
 
+$(document).ready(function () {
+  $('.hero__wrap .scrollDown').click(function (evt) {
+    evt.preventDefault();
+    var scrolledBlock = $('.hero__wrap');
+    var header = $('.page-header__wrap');
+    var newTop = scrolledBlock.outerHeight() - 92;
+
+    console.log(newTop)
+
+    $('body, html').animate({
+      scrollTop: newTop
+    }, 300)
+
+  });
+});

@@ -13,7 +13,7 @@ $(document).ready(function() {
         videoId +
         "?enablejsapi=1&version=3&controls=0&fs=0&iv_load_policy=3&rel=0&showinfo=0&loop=1&playlist=" +
         videoId +
-        "&autoplay=1&amp;mute=1";
+        "&amp;mute=1";
       videoContainer.append(
         '<iframe frameborder="0" allowfullscreen></iframe>'
       );
