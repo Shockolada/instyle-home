@@ -134,3 +134,34 @@ $(document).ready(function () {
 
   });
 });
+
+$(document).ready(function () {
+  var sliderThumbs = new Swiper('.main-slider__thumbs', {
+    slidesPerView: 1,
+    breakpoints: {
+      560: {
+        slidesPerView: 2,
+      },
+      940: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+      1440: {
+        slidesPerView: 5,
+      },
+    },
+    loop: false,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+
+  var mainSlider = new Swiper('.main-slider', {
+    effect: "fade",
+    thumbs: {
+      swiper: sliderThumbs
+    }
+  });
+});

@@ -29,6 +29,11 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.button--black {
+  background-color: $color-dark;
+  color: #ffffff;
+}
+
 .button:hover,
 .button:focus {
   background-color: $color-dark;
@@ -41,3 +46,8 @@
   color: $color-text;
 }
 
+.button--black:hover,
+.button--black:focus {
+  background-color: $color-accent;
+  border-color: $color-accent;
+}

@@ -10,8 +10,15 @@
   <!-- PAGE CONTENT
   ================================================== -->
   <main>
+    @@include('./html-partials/blocks/intro.html')
+    
+    @@include('./html-partials/blocks/property.html')
 
-    <div class=" wow fadeIn" data-wow-duration="1.5s">
+    @@include('./html-partials/blocks/property-plan.html')
+
+    @@include('./html-partials/blocks/projects.html')
+
+    <div class="container section wow fadeIn" data-wow-duration="1.5s">
       <h2 class="title title--m0">Make an enquiry</h2>
       <p class="section-description section-description--s">For more information on Minthis or to request that a member of our sales team contact you, please fill the form below.</p>
       <form class="form form-request" action="">
@@ -46,6 +53,8 @@
   @@include('./html-partials/blocks/main/page-footer.html')
 
   @@include('./html-partials/basic/scripts.html')
+
+  <!-- Initialize Swiper -->
 
 </body>
 

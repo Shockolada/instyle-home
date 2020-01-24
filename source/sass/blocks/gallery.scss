@@ -1,0 +1,114 @@
+.gallery {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.gallery__item {
+  width: 100%;
+}
+
+.gallery__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+}
+
+.gallery__img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media(min-width: $mobile_l) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(min-width: $tablet) {
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .gallery__link {
+    height: 280px;
+    padding-top: 0;
+  }
+
+  .gallery__img {
+    position: static;
+    transform: translateX(0);
+  }
+
+}
+
+@media(min-width: $tablet) and (max-width: $desktop_xs - 1) {
+
+  .gallery__item:nth-of-type(5n-4),
+  .gallery__item:nth-of-type(5n-1),
+  .gallery__item:nth-of-type(5n) {
+    grid-column: span 2;
+  }
+
+  .gallery.gallery--template2 {
+
+    .gallery__item:nth-of-type(5n-4),
+    .gallery__item:nth-of-type(5n-1),
+    .gallery__item:nth-of-type(5n) {
+      grid-column: span 1;
+    }
+
+    .gallery__item:nth-of-type(7n-6),
+    .gallery__item:nth-of-type(7n-5),
+    .gallery__item:nth-of-type(7n-2),
+    .gallery__item:nth-of-type(7n-1),
+    .gallery__item:nth-of-type(7n) {
+      grid-column: span 2;
+    }
+  }
+}
+
+@media(min-width: $desktop_xs) {
+  .gallery {
+    grid-gap: 30px;
+  }
+
+  .gallery__link {
+    height: 380px;
+  }
+
+  .gallery__item:nth-of-type(5n-4){
+    grid-column: span 2;
+  }
+
+  .gallery__item:nth-of-type(5n) {
+    grid-column: span 3;
+  }
+
+  .gallery.gallery--template2 {
+
+    .gallery__item:nth-of-type(5n-4),
+    .gallery__item:nth-of-type(5n) {
+      grid-column: span 1;
+    }
+
+    .gallery__item:nth-of-type(7n-6),
+    .gallery__item:nth-of-type(7n-5),
+    .gallery__item:nth-of-type(7n-2) {
+      grid-column: span 2;
+    }
+
+    .gallery__item:nth-of-type(7n-3) {
+      grid-column: span 3;
+    }
+  }
+}

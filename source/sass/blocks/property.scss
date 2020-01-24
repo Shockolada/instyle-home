@@ -1,0 +1,13 @@
+.property__price {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: calcResponsiveSize(20, 25, 320, 1200);
+  text-align: center;
+}
+
+@media (min-width: $desktop_s) {
+  .property__price {
+    font-size: 25px;
+  }
+}
