@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
   /* Create iframes */
-  $(".video-slide").each(function(index) {
+  $(".video-slide").each(function (index) {
     var videoSlide, videoContainer, videoType, videoId, videoSrc;
     videoSlide = $(this);
     videoContainer = videoSlide.find(".video-container");
@@ -33,13 +33,13 @@ $(document).ready(function() {
     iframe.attr("src", videoSrc);
   });
 
-  // POST commands to YouTube or Vimeo API
+  /* POST commands to YouTube or Vimeo API */
   function postMessageToPlayer(player, command) {
     if (player == null || command == null) return;
     player.contentWindow.postMessage(JSON.stringify(command), "*");
   }
 
-  // Play and pause video when the slide is changing
+  /* Play and pause video when the slide is changing */
   function playPauseVideo(slider, control) {
     var currentSlide, videoType, player;
 
@@ -83,19 +83,31 @@ $(document).ready(function() {
       }
     }
   }
-  // Connect to slider
-  $(function() {
-    var mainVideoSlider = $(".hero-slider");
 
-    // function setSlidreProgress(sliderInit, slider) {
-    //   var slideChangeDuration, slideProgress;
-    //   slideProgress = $(+ slider + ' .hero-slider__progress');
-    //   slideChangeDuration = sliderInit.params.autoplay.delay;
-    //   console.log(slideProgress)
-    //   slideProgress.animate({
-    //     width: "100%"
-    //   }, slideChangeDuration, "linear")
-    // }
+  /* Show slider progress */
+  var intervalId;
+  function setSlideProgress(slider, autoplayTime) {
+    var slideProgress, width;
+    slideProgress = slider.find('.hero-slider__progress');
+    width = 1;
+    autoplayDuration = autoplayTime / 1000;
+    intervalId = setInterval(frame, autoplayDuration);
+
+    function frame() {
+      if (width < 100) {
+        width += 0.1;
+        slideProgress.width(width + '%');
+      }
+    }
+  }
+  function clearSlideProgress() {
+    clearInterval(intervalId)
+  }
+
+  // Connect to slider
+  $(function () {
+    var mainVideoSlider = $(".hero-slider");
+    var autoplayDuration = 6000;
 
     // Slider settings
     var heroSlider = new Swiper(".hero-slider", {
@@ -104,21 +116,23 @@ $(document).ready(function() {
       effect: "fade",
       simulateTouch: false,
       autoplay: {
-        delay: 6000,
+        delay: autoplayDuration,
         disableOnInteraction: false
-      }
+      },
     });
 
-    heroSlider.on("init", function() {
+    heroSlider.on("init", function () {
       playPauseVideo(mainVideoSlider, "play");
+      // setSlideProgress(mainVideoSlider, autoplayDuration)
     });
 
-    heroSlider.on("slideChange", function() {
+    heroSlider.on("slideChange", function () {
+      // clearSlideProgress();
+      // setSlideProgress(mainVideoSlider, autoplayDuration)
       playPauseVideo(mainVideoSlider, "pause");
-      // setSlidreProgress(heroSlider, mainVideoSlider);
     });
 
-    heroSlider.on("slideChangeTransitionStart", function() {
+    heroSlider.on("slideChangeTransitionStart", function () {
       playPauseVideo(mainVideoSlider, "play");
     });
 

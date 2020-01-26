@@ -9,7 +9,10 @@
 .hero-slider__slide {
   position: relative;
   z-index: 1;
-  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 200px;
   background-color: #000000;
 
   &::before {
@@ -98,10 +101,6 @@
 }
 
 @media (min-width: $desktop_s) {
-  .hero-slider__slide {
-    padding-top: 200px;
-  }
-
   .hero-slider__tagline {
     font-size: 65px;
   }

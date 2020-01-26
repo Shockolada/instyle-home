@@ -1,28 +1,45 @@
 <div class="property-galery">
   <ul class="gallery">
-    <li class="gallery__item wow fadeIn" data-wow-duration="1.5s">
-      <a class="gallery__link" data-fancybox="property-galery" href="img/intro-slider/intro-3.jpg">
-        <img class="gallery__img" src="img/intro-slider/intro-3.jpg" alt="">
+    <li class="gallery__item  video wow fadeIn" data-wow-duration="1.5s">
+      <a class="gallery__link" data-fancybox="property-galery" href="https://www.youtube.com/watch?v=utcn3W6riwY">
+        <img class="gallery__img" src="https://i.ytimg.com/vi/utcn3W6riwY/maxresdefault.jpg" alt="">
+        <svg class="gallery__play-btn video-btn" width="80px" height="80px">
+          <use xlink:href="img/sprite.svg#play-button"></use>
+        </svg>
       </a>
     </li>
     <li class="gallery__item wow fadeIn" data-wow-duration="1.5s">
       <a class="gallery__link" data-fancybox="property-galery" href="img/intro-slider/intro-4.jpg">
-        <img class="gallery__img" src="img/intro-slider/intro-4.jpg" alt="">
+        <picture>
+          <!-- резать фото 400 х 400 для мобильных -->
+          <source media="(max-width: 940px)" srcset="img/gallery/9.jpg">
+          <!-- резать фото 990 х 380 для десктопа -->
+          <img class="gallery__img" src="img/gallery/9.jpg" alt="">
+        </picture>
       </a>
     </li>
     <li class="gallery__item wow fadeIn" data-wow-duration="1.5s">
       <a class="gallery__link" data-fancybox="property-galery" href="img/intro-slider/intro-5.jpg">
-        <img class="gallery__img" src="img/intro-slider/intro-5.jpg" alt="">
+        <picture>
+          <source media="(max-width: 940px)" srcset="img/gallery/10.jpg">
+          <img class="gallery__img" src="img/gallery/10.jpg" alt="">
+        </picture>
       </a>
     </li>
     <li class="gallery__item wow fadeIn" data-wow-duration="1.5s">
       <a class="gallery__link" data-fancybox="property-galery" href="img/intro-slider/intro-6.jpg">
-        <img class="gallery__img" src="img/intro-slider/intro-6.jpg" alt="">
+        <picture>
+          <source media="(max-width: 940px)" srcset="img/gallery/11.jpg">
+          <img class="gallery__img" src="img/gallery/11.jpg" alt="">
+        </picture>
       </a>
     </li>
     <li class="gallery__item wow fadeIn" data-wow-duration="1.5s">
       <a class="gallery__link" data-fancybox="property-galery" href="img/intro-slider/intro-7.jpg">
-        <img class="gallery__img" src="img/intro-slider/intro-7.jpg" alt="">
+        <picture>
+          <source media="(max-width: 940px)" srcset="img/gallery/12.jpg">
+          <img class="gallery__img" src="img/gallery/12.jpg" alt="">
+        </picture>
       </a>
     </li>
   </ul>

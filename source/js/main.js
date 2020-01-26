@@ -101,22 +101,44 @@ $(document).ready(function () {
 
   var previewSwiper = new Swiper('.preview-slider', {
     slidesPerView: 1,
+    slidesPerView: 'auto',
+    freeMode: true,
     breakpoints: {
-      560: {
-        slidesPerView: 2,
-      },
       940: {
-        slidesPerView: 3,
-      },
-      1200: {
         slidesPerView: 4,
       },
-      1440: {
+      1920: {
         slidesPerView: 5,
-      },
+      }
     },
     loop: true
   })
+});
+
+$(document).ready(function () {
+  var sliderThumbs = new Swiper('.main-slider__thumbs', {
+    slidesPerView: 1,
+    slidesPerView: 'auto',
+    breakpoints: {
+      940: {
+        slidesPerView: 4,
+      },
+      1920: {
+        slidesPerView: 5,
+      },
+    },
+    loop: false,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
+
+  var mainSlider = new Swiper('.main-slider', {
+    effect: "fade",
+    thumbs: {
+      swiper: sliderThumbs
+    }
+  });
 });
 
 $(document).ready(function () {
@@ -132,36 +154,5 @@ $(document).ready(function () {
       scrollTop: newTop
     }, 300)
 
-  });
-});
-
-$(document).ready(function () {
-  var sliderThumbs = new Swiper('.main-slider__thumbs', {
-    slidesPerView: 1,
-    breakpoints: {
-      560: {
-        slidesPerView: 2,
-      },
-      940: {
-        slidesPerView: 3,
-      },
-      1200: {
-        slidesPerView: 4,
-      },
-      1440: {
-        slidesPerView: 5,
-      },
-    },
-    loop: false,
-    freeMode: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-  });
-
-  var mainSlider = new Swiper('.main-slider', {
-    effect: "fade",
-    thumbs: {
-      swiper: sliderThumbs
-    }
   });
 });
