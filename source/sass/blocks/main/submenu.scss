@@ -33,6 +33,13 @@
   margin-bottom: 10px;
 }
 
+.submenu__img {
+  width: 100%;
+  height: 113px;
+  object-fit: cover;
+  object-position: center;
+}
+
 .submenu__link:hover,
 .submenu__link:focus {
   color: $color-accent;

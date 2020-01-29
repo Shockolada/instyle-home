@@ -10,6 +10,17 @@
 .property-info__content-side {
   line-height: 25px;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
   p {
     margin: 0;
   }

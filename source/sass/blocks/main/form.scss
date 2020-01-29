@@ -85,6 +85,20 @@
   // margin-top: 10px;
 }
 
+.form__consent {
+  width: 100%;
+  text-align: center;
+
+  p {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
 
 @media (min-width: $tablet) {
   .form__item--xs {

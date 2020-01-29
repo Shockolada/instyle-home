@@ -1,8 +1,8 @@
 .story {}
 
-.story__top {}
-
-.story__bottom {}
+.story__block {
+  margin-bottom: 20px;
+}
 
 .story__img-wrap {
   width: 100%;
@@ -15,13 +15,6 @@
   background-size: cover;
   background-position: center;
 }
-
-.story__info {}
-
-
-.story__bottom-img-wrap {}
-
-.story__bottom-img {}
 
 @media (min-width: $tablet) {
   .story__block {

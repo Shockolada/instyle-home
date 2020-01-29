@@ -11,7 +11,7 @@
   ================================================== -->
   <main>
     @@include('./html-partials/blocks/intro.html')
-    
+
     @@include('./html-partials/blocks/property.html')
 
     @@include('./html-partials/blocks/property-plan.html')
@@ -20,7 +20,8 @@
 
     <div class="container section wow fadeIn" data-wow-duration="1.5s">
       <h2 class="title title--m0">Make an enquiry</h2>
-      <p class="section-description section-description--s">For more information on Minthis or to request that a member of our sales team contact you, please fill the form below.</p>
+      <p class="section-description section-description--s">For more information on Minthis or to request that a member
+        of our sales team contact you, please fill the form below.</p>
       <form class="form form-request" action="">
         <p class="form__item form__item--xs">
           <input type="text" name="user-name" placeholder="Name">
@@ -41,6 +42,8 @@
         <div class="form__item">
           <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
         </div>
+
+        @@include('./html-partials/modules/form-policy.html')
 
         <button class="button button--gray form-request__btn" type="submit">Submit</button>
       </form>
