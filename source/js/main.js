@@ -156,3 +156,17 @@ $(document).ready(function () {
 
   });
 });
+
+$(document).ready(function () {
+  $('.scrollTo').click(function (evt) {
+    evt.preventDefault();
+    var id = $(this).attr('href');
+    var newTop = $(id).offset().top - 120;
+
+    console.log(newTop)
+
+    $('body, html').animate({
+      scrollTop: newTop
+    }, 300)
+  });
+});
